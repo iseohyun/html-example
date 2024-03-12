@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- 출처: https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch#description -->
+  <title>stretch예제</title>
+</head>
+<style>
+  @font-face {
+    font-family: "Inconsolata";
+    src: url("https://fonts.gstatic.com/s/inconsolata/v31/QlddNThLqRwH-OJ1UHjlKENVzlm-WkL3GZQmAwPyya15.woff2") format("woff2");
+    font-stretch: 50% 200%;
+  }
+
+  @font-face {
+    font-family: "Anek Malayalam";
+    src: url("https://fonts.gstatic.com/s/anekmalayalam/v4/6qLUKZActRTs_mZAJUZWWkhke0nYa-f6__Azq3-gP1W7db9_.woff2") format("woff2");
+    font-stretch: 75% 125%;
+  }
+
+  td {
+    border: solid;
+    border-width: 1px;
+  }
+
+  #inconsolata td {
+    font:
+      90px Inconsolata,
+      sans-serif;
+  }
+
+  #anek-malayalam td {
+    font: 90px "Anek Malayalam";
+  }
+
+  #inconsolata td:nth-child(2),
+  #anek-malayalam td:nth-child(2) {
+    font-stretch: 50%;
+  }
+
+  #inconsolata td:nth-child(3),
+  #anek-malayalam td:nth-child(3) {
+    font-stretch: 62.5%;
+  }
+
+  #inconsolata td:nth-child(4),
+  #anek-malayalam td:nth-child(4) {
+    font-stretch: 75%;
+  }
+
+  #inconsolata td:nth-child(5),
+  #anek-malayalam td:nth-child(5) {
+    font-stretch: 87.5%;
+  }
+
+  #inconsolata td:nth-child(6),
+  #anek-malayalam td:nth-child(6) {
+    font-stretch: 100%;
+  }
+
+  #inconsolata td:nth-child(7),
+  #anek-malayalam td:nth-child(7) {
+    font-stretch: 112.5%;
+  }
+
+  #inconsolata td:nth-child(8),
+  #anek-malayalam td:nth-child(8) {
+    font-stretch: 125%;
+  }
+
+  #inconsolata td:nth-child(9),
+  #anek-malayalam td:nth-child(9) {
+    font-stretch: 150%;
+  }
+
+  #inconsolata td:nth-child(10),
+  #anek-malayalam td:nth-child(10) {
+    font-stretch: 200%;
+  }
+</style>
+
+<body>
+  <table class="standard-table">
+    <thead>
+      <tr>
+        <th scope="row"></th>
+        <th scope="col">50%</th>
+        <th scope="col">62.5%</th>
+        <th scope="col">75%</th>
+        <th scope="col">87.5%</th>
+        <th scope="col">100%</th>
+        <th scope="col">112.5%</th>
+        <th scope="col">125%</th>
+        <th scope="col">150%</th>
+        <th scope="col">200%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="inconsolata">
+        <th scope="row">Inconsolata</th>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+      </tr>
+      <tr id="anek-malayalam">
+        <th scope="row">Anek Malayalam</th>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+        <td>e</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>※ 지원하는 글꼴은 다양한 넓이조절을 지원하지만, 지원하지 않는 글꼴은 넓게와 좁게만 구분된다.</p>
+</body>
+
+</html>
+

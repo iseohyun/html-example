@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>우선순위: 상세한 설정</title>
+
+  <style type="text/css">
+    span {
+      color: blue;
+      /* blue보다 나중에 적용되었기 때문에 적용됩니다. */
+      color: red;
+    }
+
+    /* 더 나중에 정의 되었지만, 더 상세하기 때문에 적용됩니다. */
+    p span {
+      /* 아래 속성을 주석처리 해 봅니다. */
+      color: #0f0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>
+    안녕하세요.<span>우선순위 예제</span>입니다.
+  </p>
+  <span>동작</span>을 확인합니다.
+
+</body>
+
+</html>

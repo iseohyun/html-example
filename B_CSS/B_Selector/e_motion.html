@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <title>선택자:동작</title>
+  <style>
+    /* 링크 동작 전 */
+    .unvisit,
+    a:link {
+      color: blue;
+      text-decoration: none;
+    }
+
+    /* 1회 방문 이후 : 색 변경*/
+    .visited,
+    a:visited {
+      color: red;
+      text-decoration: none;
+    }
+
+    /* 마우스가 올라가 있는 동안 : 밑줄 생성 */
+    .hover,
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 클릭을 누르고 있는 동안 : 크기 변경 */
+    .active,
+    a:active {
+      font-size: 1.3em;
+    }
+    
+    /* 선택된 동안 동안 : 배경색 변경, 다른 곳을 클릭하면 해제됨 */
+    .focus,
+    a:focus {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <span>링크 아님</span><br>
+  <span class="unvisit">방문 전</span><br>
+  <span class="visited">방문 후</span><br>
+  <span class="active">활성화</span><br>
+  <span class="hover">마우스 올라감</span><br>
+  <span class="focus">포커싱 됨</span><br><br>
+
+  ※ 자세한 내용은 <a href="#">링크: 테스트</a>를 참조해주세요.
+</body>
+
+</html>

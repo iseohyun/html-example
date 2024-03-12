@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>선택자:앞 뒤 추가</title>
+  <style>
+    /* 항목의 앞과 뒤에 괄호를 추가한다. */
+    li:hover:before {
+      content: "[ ";
+      color: red;
+    }
+
+    li:hover:after {
+      content: " ]";
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 각 항목에 마우스를 가져가 본다. -->
+  <ul>
+    <li>하나</li>
+    <li>둘</li>
+    <li>셋</li>
+    <li>넷</li>
+    <li>다섯</li>
+  </ul>
+</body>
+
+</html>

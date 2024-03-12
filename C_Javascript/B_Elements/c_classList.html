@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>classList</title>
+</head>
+
+<body>
+  <div id="example">이 요소의 속성을 변경합니다.</div>
+  <button onclick="addClass('red');">빨강</button>
+  <button onclick="addClass('border');">테두리</button>
+
+  <script>
+    let exampleElement = document.getElementById('example');
+
+    function addClass(name) {
+      // 현재 해당 클래스를 가지고 있는지 확인합니다.
+      if(exampleElement.classList.contains(name)){
+        // 클래스를 가지고 있다면, 제거합니다.
+        exampleElement.classList.remove(name);
+      }else{
+        // 클래스를 가지고 있지 않다면, 추가합니다.
+        exampleElement.classList.add(name);
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+<style>
+  #example {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .border {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+</style>

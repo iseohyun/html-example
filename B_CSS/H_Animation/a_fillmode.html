@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>애니매이션 끝 동작 설정</title>
+</head>
+
+<body>
+  <style>
+    .demo {
+      border-top: 100px solid #ccc;
+      height: 300px;
+    }
+
+    @keyframes grow {
+      0% {
+        font-size: 0;
+      }
+
+      100% {
+        font-size: 40px;
+      }
+    }
+
+    .demo:hover .grows {
+      animation-name: grow;
+      animation-duration: 3s;
+    }
+
+    .demo:hover .growsandstays {
+      animation-name: grow;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+  </style>
+  <p>회색 박스 위에 마우스를 올려보세요!</p>
+  <div class="demo">
+    <div class="grows">이 글씨는 커집니다.</div>
+    <div class="growsandstays">이 글씨는 커지며, 커진 상태를 유지합니다.</div>
+  </div>
+
+</body>
+
+</html>

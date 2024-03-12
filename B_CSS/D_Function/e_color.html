@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>색상 출력 테스트</title>
+  <style>
+    div {
+      border: 1px solid white;
+      width: 1cm;
+      height: 1cm;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 색상 값 변환 값 계산 -->
+  <!-- https://products.aspose.com/svg/net/color-converter/rgb-to-hwb/ -->
+
+  <p>당신의 브라우저는?</p>
+
+  <div style="background-color: #ff6432;">#RGB</div>
+  <div style="background-color: rgb(255,100,50);">RGB</div>
+  <div style="background-color: hsl(0,100%,69.6%);">HSL</div>
+
+  <!-- HSV는 HSL과 비슷한 시스템이지만 흰색표현이 미흡 -->
+  <!-- https://ko.wikipedia.org/wiki/HSL%EA%B3%BC_HSV -->
+  <div style="background-color: hsv(14.634, 198%, 60%)">HSV</div>
+  
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hwb -->
+  <div style="background-color: hwb(14.634 20% 0%)">HWB</div>
+
+  <!-- 적용된 브라우저 없음 -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/device-cmyk#browser_compatibility -->
+  <div style="background-color: device-cmyk(0% 61% 80% 0%)">CMYK</div>
+
+  <div style="background-color: xyz(46.4%, 30.6%, 6.5%)">XYZ</div>
+  <div style="background-color: lab(62.993%, 46.742%, 46.502%)">LAB</div>
+  <div style="background-color: oklab(69.5%, 39.5%, 30.25%)">OKLAB</div>
+  
+  <div style="background-color: lch(62.993%, 54.945%, 44.852%)">LCH</div>
+  <div style="background-color: oklch(69.5%, 49.75%, 37.546%)">OKLCH</div>
+</body>
+
+</html>

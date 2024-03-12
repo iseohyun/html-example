@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>선택자:ID vs Class</title>
+  <style>
+    div {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      padding: 5px;
+    }
+
+    /* class를 이용한 선택 */
+    .blue {
+      background-color: lightblue;
+    }
+
+    .radius {
+      border-radius: 20px;
+    }
+
+    /* tag와 class를 혼합한 사례 */
+    div.shadow {
+      box-shadow: 5px 5px 5px #8888;
+    }
+
+    /* id를 이용한 선택 */
+    #no1 {
+      text-decoration: underline;
+    }
+
+    /* tag명과 id를 혼합한 사례 */
+    div#no2 {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>단일 객체 선택: id(#)</li>
+    <li>공통 객체 선택: class(.)</li>
+  </ul>
+  <div id="no1" class="blue shadow">ID:no1, Class:blue, shadow</div>
+  <div id="no2" class="blue radius">ID:no2, Class:blue, radius</div>
+  <div id="no3" class="radius shadow">ID:no3, radius, shadow</div>
+</body>
+
+</html>

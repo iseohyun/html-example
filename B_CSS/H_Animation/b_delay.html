@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>스크롤을 내리면 애니메이션 시작</title>
+</head>
+
+<body>
+  <span>스크롤이 내려가면 문구가 나타납니다. 다시 실행하려면 &lt;F5>(새로고침)을 누루세요.</span>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    .box span {
+      font-size: 100px;
+      white-space: nowrap;
+    }
+
+    .box {
+      position: absolute;
+      top: 1000px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation: slide 2s linear 1 forwards;
+      animation-play-state: paused;
+    }
+
+    @keyframes slide {
+      from {
+        opacity: 0.3;
+        transform: translateX(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(200px);
+      }
+    }
+  </style>
+  <div class="box"><span>안녕하세요.</span></div>
+  <script>
+    var box = document.querySelector(".box");
+    var boxPosition = box.getBoundingClientRect().top + parseInt(window.getComputedStyle(box).top);
+    var triggerPosition = boxPosition - window.innerHeight * 2;
+
+    console.log("박스 위치: " + boxPosition);
+    console.log("윈도우 세로 크기: " + window.innerHeight);
+    console.log("[이벤트 시작]: " + triggerPosition);
+
+    // 애니메이션이 시작되었는지 여부를 추적하는 변수
+    var animationStarted = false; 
+
+    document.addEventListener("scroll", function () {
+      var scrollPosition = window.scrollY;
+
+      console.log("현재 스크롤: " + scrollPosition);
+
+      // 1회만 수행
+      if (scrollPosition >= triggerPosition && !animationStarted) {
+        console.log("이벤트 시작");
+        animationStarted =true;
+        box.style.animationPlayState = "running";
+      }
+    });
+  </script>
+</body>
+
+</html>

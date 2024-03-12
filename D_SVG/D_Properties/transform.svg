@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>이동, 변형 예제</title>
+
+  <rect x="0" y="0" width="10" height="10" fill="red" />
+  <rect x="0" y="0" width="10" height="10" transform="translate(30,20)" fill="blue" />
+  <rect x="0" y="0" width="10" height="10" transform="translate(30,20) rotate(45)" fill="orange" />
+  <rect x="0" y="0" width="10" height="10" transform="matrix(1, 1, 0, 1, 5, 15)" fill="green" />
+
+  <text style="font-size:3px;fill:red" x="1" y="13">10 x 10</text>
+
+  <text style="font-size:3px;fill:blue" x="25" y="18">translate(30,20)</text>
+  <text style="font-size:3px;fill:orange" x="25" y="37">rotate(45)</text>
+  <text style="font-size:3px;fill:green" x="2" y="42">matrix:1, 1, 0, 1, 5, 15</text>
+</svg>

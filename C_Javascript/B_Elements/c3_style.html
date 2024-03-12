@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>접근</title>
+</head>
+
+<body>
+  <style>
+    .title {
+      font-size: 2em;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+  <div id="overview" class="title red">제목학원</div>
+
+  <button onclick="action();">실행</button>
+
+  <script>
+    function action() {
+      let overview = document.querySelector('#overview');
+      // 내용 출력 : 객체가 가진 직접적인 속성을 가져온다.
+      console.log("id : " + overview.id);
+      console.log("class : " + overview.className);
+      console.log("font color : " + overview.style.color); // 안나옴
+      console.log("font size : " + overview.style.fontSize); // 안나옴
+
+      // getComputedStyle를 사용하여 최종 반영된 스타일 가져오기
+      let computedStyle = window.getComputedStyle(overview);
+      console.log("font color(compute) : " + computedStyle.fontSize);
+      console.log("font size(compute) : " + computedStyle.color);
+
+      overview.innerText = "<새 제목>";
+      overview.style.color = "blue";
+      console.log("(after)font color : " + overview.style.color); // 안나옴
+    }
+
+  </script>
+</body>
+
+</html>

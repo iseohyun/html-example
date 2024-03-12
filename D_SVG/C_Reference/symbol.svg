@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:bx="https://boxy-svg.com">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>symbol test</title>
+  <defs>
+    <symbol id="symbol-0" viewBox="0 0 100 100" bx:pinned="true">
+      <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 8px;" d="M 20 95 L 20 44 L 4 44 L 49 5 L 94 44 L 78 44 L 78 95 L 59 95 L 59 69 C 59 59 49 52 44 58 C 41 60 39 64 39 69 L 39 95 L 20 95 Z"/>
+    </symbol>
+  </defs>
+
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 270, 185)" style="mix-blend-mode: difference; fill:red; stroke:red" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 227, 158)" style="mix-blend-mode: difference; fill:orange; stroke:orange" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 207, 100)" style="mix-blend-mode: difference; fill:yellow; stroke:yellow" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 60, 109)" style="mix-blend-mode: difference; fill:green; stroke:green" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 376, 138)" style="mix-blend-mode: difference; fill:blue; stroke:blue" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 136, 155)" style="mix-blend-mode: difference; fill:purple; stroke:purple" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(3, 0, 0, 3, -31, 176)" style="mix-blend-mode: difference; fill:white; stroke:gray" />
+  <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 264, 60)" style="mix-blend-mode: difference; fill:black; stroke:black"/>
+
+</svg>

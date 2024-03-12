@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 등록과 삭제</title>
+</head>
+
+<body>
+  <!-- 버튼1: 버튼2의 클릭이벤트를 등록/말소 한다. -->
+  <button type="button" onclick="trigEvent(this)">이벤트 등록 됨</button>
+
+  <!-- 버튼2: 클릭되었을 때, log를 출력한다. -->
+  <button type="button" id="target">버튼2</button>
+
+  <!-- 버튼3: 버튼2에게 클릭되었다고 거짓 정보를 흘린다. -->
+  <button type="button" onclick="falseAd();">버튼2에게 클릭 이벤트 발생</button>
+</body>
+
+</html>
+
+<script>
+  const target = document.getElementById('target');
+  target.addEventListener("click", printEvent);
+  
+  // 버튼1은 클릭될 때 마다 버튼2의 이벤트함수를 등록/말소 한다.
+  function trigEvent(me) {
+    if (me.textContent == "이벤트 등록 됨") {
+      me.textContent = "이벤트 삭제 됨";
+      target.removeEventListener("click", printEvent);
+      
+    } else {
+      me.textContent = "이벤트 등록 됨";
+      target.addEventListener("click", printEvent);
+    }
+  }
+
+  // 버튼3은 버튼 2에게 클릭되었다는 거짓 정보를 알린다.
+  function falseAd() {
+    var event = new Event('click');
+    target.dispatchEvent(event);
+  }
+  
+  // 버튼 2는 클릭될 때마다 1씩 증가시키며 로그를 출력한다.
+  var sequence = 1;
+  function printEvent() {
+    console.log('클릭' + sequence++);
+  }
+</script>

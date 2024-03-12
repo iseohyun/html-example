@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 400 200"
+  xmlns="http://www.w3.org/2000/svg">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>선, 색 예제</title>
+  <g style="fill:none; stroke: black;">
+    <rect x="20" y="16" width="40" height="40"/>
+    <rect x="40" y="33" width="40" height="40" style="fill: red;"/>
+    <rect x="120" y="16" width="40" height="40" style="fill:blue;"/>
+    <rect x="140" y="33" width="40" height="40" style="fill: red; fill-opacity:0.5"/>
+    <path d="M 240 33 L 260 33 L 260 16 L 220 16 L 220 56 L 240 56 Z M 280 33 L 280 73 L 240 73 L 240 56 L 260 56 L 260 33 Z" style=" fill-rule: nonzero; fill: rgb(99, 218, 66);"/>
+    <rect x="320" y="16" width="40" height="40"/>
+    <rect x="340" y="33" width="40" height="40" style="stroke: red;"/>
+
+    <rect x="20" y="116" width="40" height="40"/>
+    <rect x="40" y="133" width="40" height="40" style="stroke-width:3px"/>
+    <path d="M 118 117 h 40 v 40 h -40" style="stroke-linecap:butt;stroke-width:5px"/>
+    <path d="M 140 133 h 40 v 40 h -40" style="stroke-linecap:round;stroke-width:5px"/>
+    <rect x="220" y="116" width="40" height="40" style="stroke-width:5px"/>
+    <rect x="240" y="133" width="40" height="40" style="stroke-width:5px;stroke-linejoin:round"/>
+    <rect x="320" y="116" width="40" height="40"/>
+    <rect x="340" y="133" width="40" height="40" style="stroke-dasharray:5 5"/>
+
+    <circle cx="139" cy="132" r="10" style="stroke: #0F0"/>
+    <circle cx="279" cy="132" r="10" style="stroke: #0F0"/>
+  </g>
+  <g style="font-family: Arial, sans-serif;font-size: 12px; text-anchor: middle; white-space: pre;">
+    <text x="50" y="92">fill: red</text>
+    <text x="150" y="92">opacity: 0.5</text>
+    <text x="250" y="92">fill-rule:nonzero</text>
+    <text x="350" y="92">stroke: red</text>
+    <text x="50" y="188" style="letter-spacing: -1px;">stroke-width:3px</text>
+    <text x="150" y="194" style="letter-spacing: -1px;">stroke-linecap:round</text>
+    <text x="250" y="188" style="letter-spacing: -1px;">stroke-linejoin:round</text>
+    <text x="350" y="195" style="letter-spacing: -1px;">stroke-dasharray: 5 5</text>
+  </g>
+</svg>

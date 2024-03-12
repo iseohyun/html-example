@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>선택자:특수한 경우</title>
+  <style>
+    /* 변수 --bg-color을 lightblue로 설정한다. */
+    :root{
+      --bg-color:lightblue;
+    }
+
+    /* 비어있는 객체를 배치가능한 검정색 상자(30*10)으로 그린다. */
+    span:empty {
+      display: inline-block;
+      width:30px;
+      height: 10px;
+      border: 1px solid black;
+    }
+
+    /* 언어설정이 en이라면 붉은 글자로 표시한다. */
+    span:lang(en) {
+      color:red;
+    }
+
+    /* 언어설정이 jp가 아니라면 밑줄을 그린다. */
+    span:not([lang="jp"]) {
+      text-decoration: underline;
+    }
+
+    /* 체크박스가 체크되면, 뒤따라오는 span에 지정된 색(--bg-color)로 칠한다. */
+    input:checked+span{
+      background-color: var(--bg-color);
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" value="한글" checked><span lang="kr">사과</span><br>
+  <input type="checkbox" value="영어"><span lang="en">apple</span><br>
+  <input type="checkbox" value="일어"><span lang="jp">りんご</span><br>
+  <input type="checkbox" value="중국어"><span lang="cn">苹果</span><br>
+  <input type="checkbox" value="없음"><span lang="no"></span><br>
+</body>
+
+</html>

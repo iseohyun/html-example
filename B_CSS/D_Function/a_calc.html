@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>넓이 계산</title>
+  <style>
+    /* 칸의 외각여백은 5px로하고, 나머지 넓이는 5등분 한다. */
+    :root {
+      --gap: 5px
+    }
+
+    div {
+      border: 1px solid #ccc;
+      width: calc((100% - (12 * var(--gap))) / 5);
+      margin: var(--gap);
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="display: flex; flex-wrap: wrap; width: 95%; height: 95%;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+    <div>21</div>
+    <div>22</div>
+    <div>23</div>
+    <div>24</div>
+    <div>25</div>
+  </div>
+</body>
+
+</html>

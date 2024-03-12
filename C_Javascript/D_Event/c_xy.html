@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>좌표 구하기</title>
+</head>
+
+<body>
+  <div id="WhiteBoard"></div>
+  <div id="pointer"></div>
+  <script>
+    const OBJ = document.getElementById('WhiteBoard');
+    const PT = document.getElementById('pointer');
+    // WB.addEventListener("mousemove", function (e) {
+    OBJ.addEventListener("click", function (e) {
+      // 객체의 좌표
+      OBJ.innerText = `Objct : Div XY ( ${OBJ.offsetLeft}, ${OBJ.offsetTop} )\n`;
+      // 객체의 크기 (600 * 400)
+      OBJ.innerText += `Objct : client XY ( ${OBJ.clientWidth}, ${OBJ.clientHeight} )\n`;
+      // 문서상 이벤트 좌표
+      OBJ.innerText += `Event : page XY ( ${e.pageX}, ${e.pageY} )\n`;
+      // 문서좌표 - 객체 좌표
+      OBJ.innerText += `Event : page - Div ( ${e.pageX - OBJ.offsetLeft}, ${e.pageY - OBJ.offsetTop} )\n`;
+      // 상대좌표 = 문서좌표 - 객체 좌표
+      OBJ.innerText += `Event : offset XY ( ${e.offsetX}, ${e.offsetY} )\n`;
+      // 스크롤 위치(Scroll Y)
+      OBJ.innerText += `scroll Y : ${(window.pageYOffset).toFixed(0)}\n`;
+      // 브라우저의 문서영역 좌상단으로부터 (Page - Scroll)
+      OBJ.innerText += `Event : client XY ( ${e.clientX}, ${e.clientY} )\n`;
+      OBJ.innerText += `Event : XY ( ${e.x}, ${e.y} )\n`;
+      // 모니터 전체에서(기준모니터 좌상단 기준)
+      OBJ.innerText += `Event : screen XY ( ${e.screenX}, ${e.screenY} )\n`;
+      PT.style.top = e.pageY + 'px';
+      PT.style.left = e.pageX + 'px';
+      console.log(OBJ);
+    });
+  </script>
+</body>
+
+</html>
+
+<style>
+  #WhiteBoard {
+    /* add padding = 600 */
+    width: 500px;
+    /* add padding = 400 */
+    height: 300px;
+    border: 1px solid #ddd;
+    box-shadow: #8888 5px 5px 5px;
+    padding: 50px;
+    margin: 400px auto;
+    border-radius: 15px;
+  }
+
+  #pointer {
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 100px;
+    background-color: red;
+    position: absolute;
+  }
+</style>

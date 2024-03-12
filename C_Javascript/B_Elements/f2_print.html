@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>데이터 가져오기</title>
+</head>
+
+<body>
+  <div id="board"></div>
+  <script>
+    let board = document.getElementById("board");
+    function readData(data) {
+      data.forEach(function (course) {
+        // 강의명(강좌수) : 수업요일
+        var output = course.강의명 + "(" + course.강좌수 + ") : " + course.수업요일.join(", ") + "\n";
+        board.innerText += output;
+      });
+    }
+
+  </script>
+</body>
+
+</html>
+
+<script>
+  var request = new XMLHttpRequest();
+  request.open('GET', 'myData.json');
+  request.responseType = 'json';
+  request.send();
+  request.onload = function () {
+    var list = request.response;
+
+    readData(list);
+  }
+</script>

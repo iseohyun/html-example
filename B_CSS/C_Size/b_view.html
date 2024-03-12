@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>화면 크기</title>
+  <style>
+    div {
+      border: 1px solid #ccc;
+      width: 90%;
+      height: 90%;
+      margin: auto;
+      background-color: #ddd8;
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 모든 div는 본인보다 상위 넓이의 90%를 할당한다. -->
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <!-- 상속받지 않은 전체화면넓이 값을 참조 가능하다. -->
+              <div style="width:30vw"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

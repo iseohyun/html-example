@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>선택자:몇 번 째?</title>
+  <style>
+    /* 3번째 p는 #bb8를 색칠합니다.(모든객체에 기준) */
+    p:nth-child(3) {
+      background-color: #88b;
+    }
+
+    /* 3번째 p는 #bb8를 색칠합니다. (p끼리만)*/
+    p:nth-of-type(3) {
+      background-color: #bb8;
+    }
+
+    /* 뒤에서 3번째 p는 #ffc를 색칠합니다. */
+    p:nth-last-of-type(3) {
+      background-color: #ffc;
+    }
+
+    /* 처음 객체와 마지막 객체에 밑줄을 긋습니다. */
+    p:first-of-type,
+    p:last-of-type {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>큰 제목</h1>
+  <p>1번째 문단입니다.p 첫 등장</p>
+  <p>2번째 문단입니다. 모든 객체 중, 3번째(p:nth-child(3))</p>
+  <p>3번째 문단입니다. p타입 중, 3번째(p:nth-of-type(3))</p>
+  <p>4번째 문단입니다.뒤에서 3번째(p:nth-last-of-type(3))</p>
+  <p>5번째 문단입니다.</p>
+  <p>마지막 문단입니다.</p>
+</body>
+
+</html>

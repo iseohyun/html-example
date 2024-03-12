@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>문서</title>
+</head>
+
+<body>
+  <a href="a_mouseEvent.html">link</a>
+  <div style="height:2000px;"></div>
+  <button onclick="a_mouse">에러</button>
+</body>
+
+</html>
+<script>
+  window.addEventListener("load", print);
+  // window.addEventListener("unload", print); // 삭제 예정
+  window.addEventListener("abort", print);
+  window.addEventListener("resize", print);
+  window.addEventListener("scroll", print);
+
+  function print(event) {
+    console.log(event);
+  }
+
+  
+</script>

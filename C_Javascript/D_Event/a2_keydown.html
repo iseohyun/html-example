@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>키보드 이벤트 감지</title>
+</head>
+
+<body>
+  <script>
+    document.addEventListener("keydown", log);
+    document.addEventListener("keyup", log);
+    // document.addEventListener("keypress", log);
+    
+    function log(e) {
+      var message;
+      message = e.type + ": ";
+      message += e.key + " (";
+      message += (e.ctrlKey) ? "Ctrl, " : "";
+      message += (e.altKey) ? "Alt, " : "";
+      message += (e.shiftKey) ? "Shift" : "";
+      message += ")";
+      console.log(message);
+
+      // 상위로 가는 이벤트를 중지, F12(디버거)가 동작하지 않음
+      // 로딩을 한 뒤에, 디버거를 열고, 주석을 풀고, 저장한 뒤, 새로고침 하면 효과를 확인 할 수 있음
+      // e.preventDefault();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>타이틀</title>
+</head>
+
+<body>
+  <!-- 같은 range라도 언제 값을 읽어올지에 따라 다릅니다. -->
+  마우스move:
+  <input id="range-js-test" type="range" min="0" max="100" onmousemove="apply_progress(this.value)"><br>
+
+  <!-- 클릭이 해제되면 읽어옵니다. -->
+  on change:
+  <input id="range-js-test" type="range" min="0" max="100" onchange="apply_progress(this.value)"><br>
+  반영된 값:
+  <progress id="progress-js-test" value="0" max="100">
+    <script>
+      function apply_progress(value) {
+        document.getElementById('progress-js-test').value = value;
+        document.getElementById('textarea-js-test').textContent = value;
+      }
+    </script>
+</body>
+
+</html>

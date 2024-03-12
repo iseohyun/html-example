@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>객체, 폼</title>
+</head>
+
+<body>
+  <form>
+    입력: <input type="text" id="input"><br>
+    변경: <input type="text" id="output" disabled><br>
+    keydown: <input type="text" id="keydown" disabled><br>
+    <input type="submit">
+    <input type="reset">
+    <div id="sts" style="width:50%;height:20pt">상태창</div>
+  </form>
+</body>
+
+</html>
+<script>
+  var input = document.getElementById("input");
+  var output = document.getElementById("output");
+  var keydown = document.getElementById("keydown");
+  var sts = document.getElementById("sts");
+  var form = document.querySelector("form");
+
+  input.addEventListener("change", (e) => {
+    output.value = input.value;
+  });
+
+  input.addEventListener("keydown", (e) => {
+    keydown.value = input.value;
+  });
+
+  input.addEventListener("focus", (e) => {
+    sts.innerText = "선택 되었습니다.";
+    console.log("선택 되었습니다.");
+  });
+
+  input.addEventListener("blur", (e) => {
+    sts.innerText = "해제 되었습니다.";
+    console.log("해제 되었습니다.");
+  });
+
+  form.addEventListener("submit", (e) => {
+    sts.innerText = "제출 되었습니다.";
+    console.log("제출 되었습니다.");
+  });
+
+  form.addEventListener("reset", (e) => {
+    sts.innerText = "초기화 되었습니다.";
+    console.log("초기화 되었습니다.");
+  });
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Class로 검색하기</title>
+</head>
+
+<body>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+  <div class="hello">안녕하시오</div>
+
+  <script>
+    var hellos = document.getElementsByClassName("hello");
+    for (var i = 0; i < hellos.length; i++) {
+      hellos[i].innerHTML += i;
+    }
+
+    // Array.from(hellos).forEach(function (e, i) {
+    //   e.innerHTML += i;
+    // });
+
+  </script>
+</body>
+
+</html>

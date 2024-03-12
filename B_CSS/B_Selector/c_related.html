@@ -1,0 +1,103 @@
+<html>
+
+<head>
+  <title>선택자:하위선택, 인접선택</title>
+  <style>
+    /* 하위선택 예제: 테이블이하 모든 th, td선택 */
+    table th,
+    td {
+      width: 100px;
+      border: 1px solid #000;
+    }
+
+    /* 직접하위선택 예제: 1계층 li만 선택하고 싶다면? */
+    body>ul>li {
+      background-color: #ddd;
+    }
+
+    /* 함정: ul이하 li는 모두 선택 */
+    ul>li {
+      text-decoration: underline;
+    }
+
+    /* 인접선택 예제 */
+    td.sel~td {
+      font-weight: bold;
+    }
+
+    /* 인접직접선택 예제 */
+    td.sel+td {
+      background-color: #ffd;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Table 구조</p>
+  <p>table</p>
+  <ul>
+    <li>thead</li>
+    <ul>
+      <li>tr</li>
+      <ul>
+        <li>th : 머리글 1열</li>
+        <li>th : 머리글 2열</li>
+        <li>th : 머리글 3열</li>
+      </ul>
+    </ul>
+    <li>tbody</li>
+    <ul>
+      <li>tr</li>
+      <ul>
+        <li>td : 1행 1열</li>
+        <li>td : 1행 2열</li>
+        <li>td : 1행 3열</li>
+      </ul>
+    </ul>
+    <ul>
+      <li>tr</li>
+      <ul>
+        <li>td : 2행 1열</li>
+        <li>td : 2행 2열</li>
+        <li>td : 2행 3열</li>
+      </ul>
+    </ul>
+    <ul>
+      <li>tr</li>
+      <ul>
+        <li>td : 3행 1열</li>
+        <li>td : 3행 2열</li>
+        <li>td : 3행 3열</li>
+      </ul>
+    </ul>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>머리 1</th>
+        <th>머리 2</th>
+        <th>머리 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sel">1행 1열</td>
+        <td>1행 2열</td>
+        <td>1행 3열</td>
+      </tr>
+      <tr>
+        <td class="sel">2행 1열</td>
+        <td>2행 2열</td>
+        <td>2행 3열</td>
+      </tr>
+      <tr>
+        <td class="sel">3행 1열</td>
+        <td>3행 2열</td>
+        <td>3행 3열</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

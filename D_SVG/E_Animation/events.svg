@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 380 400"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>이벤트 예제</title>
+  <g style="fill: #ddd; stroke: black;transform-box: fill-box;">
+    <path d="M 100 15 L 139 42 L 124 86 L 76 86 L 61 42 Z" id="first" style="transform-origin: 100px 55px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;90;360" dur="2s" repeatCount="1" begin="click" calcMode="linear" restart="whenNotActive" keyTimes="0; 0.5; 1"/>
+    </path>
+
+    <path d="M 100 105 L 139 132 L 124 176 L 76 176 L 61 132 Z" style="transform-origin: 100px 145px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="mouseenter"/>
+    </path>
+
+    <path d="M 100 190 L 139 217 L 124 261 L 76 261 L 61 217 Z" style="transform-origin: 100px 230px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="touchstart"/>
+    </path>
+
+    <path d="M 100 285 L 139 312 L 124 356 L 76 356 L 61 312 Z" style="transform-origin: 100px 325px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="touchmove"/>
+    </path>
+
+    <path d="M 310 15 L 349 42 L 334 86 L 286 86 L 271 42 Z" style="transform-origin: 310px 45px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="blur"/>
+    </path>
+
+    <path d="M 310 105 L 349 132 L 334 176 L 286 176 L 271 132 Z" style="transform-origin: 310px 145px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="contextmenu"/>
+    </path>
+
+    <path d="M 310 190 L 349 217 L 334 261 L 286 261 L 271 217 Z" style="transform-origin: 310px 235px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="click + 2s"/>
+    </path>
+
+    <path d="M 310 285 L 349 312 L 334 356 L 286 356 L 271 312 Z" style="transform-origin: 310px 325px;">
+      <animateTransform type="rotate" attributeName="transform" values="0;360" dur="2s" repeatCount="1" begin="first.click + 1s" />
+    </path>
+  </g>
+  <g style=" font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle">
+    <text x="100" y="15">클릭(1번)</text>
+    <text x="100" y="105">마우스오버</text>
+    <text x="100" y="195">스크린 터치</text>
+    <text x="100" y="285">스크린 드레그</text>
+    <text x="310" y="15">해제시</text>
+    <text x="310" y="105">좌클릭(메뉴)</text>
+    <text x="310" y="195">클릭후 2초후</text>
+    <text x="310" y="285">1번 클릭후, 1초후</text>
+  </g>
+</svg>

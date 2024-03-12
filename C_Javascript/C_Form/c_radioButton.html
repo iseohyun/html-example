@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>타이틀</title>
+</head>
+
+<body>
+  <!-- 라디오 타입은 하나가 체크될 때, 자동으로 나머지가 체크해제되어야 합니다.
+  이 경우는 name속성으로 그룹화됩니다. -->
+  <input type="radio" name="sex" value="남자" onclick="writeGender(this.value)">남자
+  <input type="radio" name="sex" value="여자" onclick="writeGender(this.value)">여자<br>
+
+  <!-- 2번그룹의 이름은 color입니다. -->
+  <input type="radio" name="color" value="red" onclick="setColor(this.value)">Red
+  <input type="radio" name="color" value="green" onclick="setColor(this.value)">Green
+  <input type="radio" name="color" value="blue" onclick="setColor(this.value)">Blue
+
+  <textarea id="textarea-js-test"></textarea>
+  <script>
+    // 성별이 클릭되었을 때, 호출됩니다.
+    function writeGender(value) {
+      document.getElementById('textarea-js-test').textContent = value;
+    }
+
+    // 색 그룹이 클릭되었을 때, 호출됩니다.
+    function setColor(value) {
+      document.getElementById('textarea-js-test').style.backgroundColor = value;
+      document.getElementById('textarea-js-test').style.color = "white";
+      document.getElementById('textarea-js-test').style.fontWeight = "Bold";
+    }
+  </script>
+</body>
+
+</html>

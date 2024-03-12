@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery</title>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+
+  <script>
+    // 새 객체 생성 예제
+    $("body").append("<div id=\"myDiv\">test</div>");
+
+    // 특성 적용 예제
+    $("#myDiv").attr({ "attr1": "value1", "attr2": "value2", "class": "myClass" });
+
+    // 값 확인
+    if ($("#myDiv").attr("attr1") === "value1")
+      console.log("맞습니다.");
+
+    // 특성 제거
+    $("#myDiv").removeAttr("attr1");
+
+    // 클래스 추가
+    $("#myDiv").addClass("hidden");
+
+    // 클래스가 있는지 확인
+    if ($("#myDiv").hasClass("hidden"))
+      console.log("있습니다.");
+
+    // 클래스 제거
+    $("#myDiv").removeClass("hidden");
+  </script>
+</body>
+
+</html>
+
+<style>
+  #myDiv {
+    border: 1px solid;
+    padding: 6px;
+    width: 100px;
+    height: 100px;
+  }
+</style>

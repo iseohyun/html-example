@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>요소 변환 실습</title>
+</head>
+
+<body>
+  <div id="example">이 요소의 속성을 변경합니다.</div>
+
+  <script>
+    // 요소를 가져옵니다.
+    let exampleElement = document.getElementById('example');
+
+    // 'class' 속성을 설정합니다.
+    exampleElement.setAttribute('class', 'highlight');
+
+    // 'data-id' 속성을 설정합니다.
+    exampleElement.setAttribute('data-id', '123');
+
+    // 결과를 확인합니다.
+    console.log(exampleElement.getAttribute('class')); // 출력: highlight
+    console.log(exampleElement.getAttribute('data-id')); // 출력: 123
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>타이머</title>
+</head>
+<h1>간단한 타이머</h1>
+<button onclick="startTimer()">시작</button>
+<button onclick="stopTimer()">중지</button>
+<div id="timer">00:00:00</div>
+
+<body>
+  <script>
+    let timerInterval;
+    let mm10 = 0, seconds = 0, minutes = 0, hours = 0;
+
+    function startTimer() {
+      if (!timerInterval)
+        timerInterval = setInterval(updateTimer, 10);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+
+    function updateTimer() {
+      mm10++;
+      if (mm10 >= 100) {
+        mm10 = 0;
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+      }
+
+      const formattedTime = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + '.' + pad(mm10);
+      document.getElementById('timer').innerText = formattedTime;
+    }
+
+    function pad(num) {
+      return (num < 10) ? '0' + num : num;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>타이틀</title>
+</head>
+
+<body>
+  <style>
+    #wrapper-outer {
+      position: relative;
+    }
+
+    #wrapper-inner {
+      display: grid;
+      width: 550px;
+      height: 550px;
+      grid-template-columns: repeat(5, 100px);
+      grid-template-rows: repeat(5, 100px);
+      grid-gap: 10px;
+    }
+
+    #wrapper-inner div:first-child {
+      background-color: bisque;
+      grid-column: 3 / 6;
+      grid-row: 3 / 6;
+    }
+
+    #wrapper-inner div:nth-child(2) {
+      background-color: burlywood;
+      grid-column: 3 / 5;
+      grid-row: 1 / 6;
+    }
+
+    #wrapper-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      width: 550px;
+      height: 550px;
+      grid-template-columns: repeat(5, 100px);
+      grid-template-rows: repeat(5, 100px);
+      grid-gap: 10px;
+    }
+
+    #wrapper-background div {
+      height: 100px;
+      width: 100px;
+      border: 1px solid #ddd;
+    }
+
+    #wrapper-control-box div:first-child {
+      background-color: bisque;
+    }
+
+    #wrapper-control-box div:nth-child(2) {
+      background-color: burlywood;
+    }
+
+    #wrapper-control-box input {
+      width: 10%;
+      text-align: center;
+    }
+  </style>
+  <div id="wrapper-outer">
+    <div id="wrapper-background">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="wrapper-inner">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div id="wrapper-control-box">
+    <div>
+      <span>상자1:</span>
+      가로(<input id="first-col1" type="number" value="3"> /
+      <input id="first-col2" type="number" value="6">)
+      세로(<input id="first-row1" type="number" value="3"> /
+      <input id="first-row2" type="number" value="6">)
+    </div>
+    <div>
+      <span>상자2:</span>
+      가로(<input id="second-col1" type="number" value="3"> /
+      <input id="second-col2" type="number" value="5">)
+      세로(<input id="second-row1" type="number" value="1"> /
+      <input id="second-row2" type="number" value="6">)
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 입력 값이 변경될 때마다 그리드 열 및 행 값을 설정합니다.
+      var numberInputs = document.querySelectorAll("input[type='number']");
+      numberInputs.forEach(function (input) {
+        input.addEventListener("change", function () {
+          var firstCol1 = document.getElementById("first-col1").value;
+          var firstCol2 = document.getElementById("first-col2").value;
+          var firstRow1 = document.getElementById("first-row1").value;
+          var firstRow2 = document.getElementById("first-row2").value;
+          var secondCol1 = document.getElementById("second-col1").value;
+          var secondCol2 = document.getElementById("second-col2").value;
+          var secondRow1 = document.getElementById("second-row1").value;
+          var secondRow2 = document.getElementById("second-row2").value;
+
+          document.querySelector("#wrapper-inner div:first-child").style.gridColumn = firstCol1 + " / " + firstCol2;
+          document.querySelector("#wrapper-inner div:first-child").style.gridRow = firstRow1 + " / " + firstRow2;
+          document.querySelector("#wrapper-inner div:nth-child(2)").style.gridColumn = secondCol1 + " / " + secondCol2;
+          document.querySelector("#wrapper-inner div:nth-child(2)").style.gridRow = secondRow1 + " / " + secondRow2;
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

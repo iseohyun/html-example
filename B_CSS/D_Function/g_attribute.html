@@ -1,0 +1,20 @@
+<html>
+
+<head>
+  <title>속성 가져오기</title>
+</head>
+
+<body>
+  <!-- 예제. attr이름이 my-attr인 값(hello)을 가져오기 -->
+  <style>
+    [my-attr]::before {
+      content: attr(my-attr) " ";
+      color: red;
+    }
+  </style>
+  <p my-attr="Hello">World</p>
+
+  <!-- 동적인 수정에 한계가 있다 >> javascript -->
+</body>
+
+</html>

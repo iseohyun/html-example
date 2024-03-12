@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>테이블2: 합치기</title>
+  <style type="text/css">
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <!-- 표 제목 -->
+    <caption>표 제목</caption>
+
+    <!-- 첫 행 -->
+    <thead>
+      <tr>
+        <td>표 머리1</td>
+        <td>표 머리2</td>
+      </tr>
+    </thead>
+
+    <!-- 내용 -->
+    <tbody>
+      <tr>
+        <td>주제1</td>
+        <td>내용1</td>
+      </tr>
+      <tr>
+        <!-- 가로칸 확장 -->
+        <td colspan="2">주제2</td>
+      </tr>
+      <tr>
+        <!-- 세로칸 확장 -->
+        <td rowspan="3">주제3</td>
+        <td>내용3</td>
+      </tr>
+      <tr>
+        <td>내용4</td>
+      </tr>
+      <tr>
+        <td>내용5</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

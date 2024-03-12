@@ -1,0 +1,141 @@
+<html>
+
+<head>
+  <title>폰트 크기</title>
+  <style>
+    p span:nth-child(1) {
+      font-size: 30pt;
+    }
+
+    p span:nth-child(2) {
+      font-size: 30px;
+    }
+
+    p span:nth-child(3) {
+      font-size: 2cm;
+    }
+
+    span span {
+      font-size: 1.5em;
+    }
+
+    .rem {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    <span>30pt</span><span>30px</span><span>2cm</span>
+  </p>
+
+  <div id="font-size-controllor">
+    <label>
+      body :
+      <button id="increaseFontSize">+</button>
+      <input id="defaultFontSize" type="number" disabled />
+      <button id="decreaseFontSize">-</button>
+    </label>
+    <label>
+      Root :
+      <button id="increaseRootFontSize">+</button>
+      <input id="defaultRootSize" type="number" disabled />
+      <button id="decreaseRootFontSize">-</button>
+    </label>
+  </div>
+
+  <span>
+    [A1
+    <span class="rem">R1</span>
+    <span>
+      [A2
+      <span class="rem">R2</span>
+      <span>
+        [A3
+        <span class="rem">R3</span>
+        <span>
+          [A4
+          <span class="rem">R4</span>
+          ]
+        </span>
+        ]
+      </span>
+      ]
+    </span>
+    ]
+  </span>
+
+</body>
+<style>
+  #font-size-controllor {
+    margin: 10px;
+    font-size: 15pt;
+  }
+
+  #font-size-controllor label:first-child {
+    margin: 0 0 0 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px 0 0 10px;
+    width: fit-content;
+  }
+
+  #font-size-controllor label:last-child {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 10px 10px 0;
+    width: fit-content;
+  }
+</style>
+<script>
+  // 버튼 요소를 가져옵니다.
+  var increaseButton = document.getElementById('increaseFontSize');
+  var decreaseButton = document.getElementById('decreaseFontSize');
+  var increaseRootButton = document.getElementById('increaseRootFontSize');
+  var decreaseRootButton = document.getElementById('decreaseRootFontSize');
+  var defaultFontSize = document.getElementById('defaultFontSize');
+  var defaultRootSize = document.getElementById('defaultRootSize');
+
+  // body 요소를 선택합니다.
+  var body = document.querySelector('body');
+  var computedStyle = window.getComputedStyle(body);
+  var currentFontSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+  defaultFontSize.value = currentFontSize.toFixed(2);
+
+  var root = document.documentElement;
+  var currentRootSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+  defaultRootSize.value = currentRootSize.toFixed(2);
+
+  // 글꼴 크기 증가 버튼의 클릭 이벤트를 처리합니다.
+  increaseButton.addEventListener('click', function () {
+    currentFontSize += 1;
+    body.style.fontSize = currentFontSize + 'px';
+    defaultFontSize.value = currentFontSize;
+  });
+
+  // 글꼴 크기 감소 버튼의 클릭 이벤트를 처리합니다.
+  decreaseButton.addEventListener('click', function () {
+    currentFontSize -= 1;
+    body.style.fontSize = currentFontSize + 'px';
+    defaultFontSize.value = currentFontSize;
+  });
+
+  // 글꼴 크기 증가 버튼의 클릭 이벤트를 처리합니다.
+  increaseRootButton.addEventListener('click', function () {
+    currentRootSize += 1;
+    root.style.fontSize = currentRootSize + 'px';
+    defaultRootSize.value = currentRootSize;
+  });
+
+  // 글꼴 크기 감소 버튼의 클릭 이벤트를 처리합니다.
+  decreaseRootButton.addEventListener('click', function () {
+    currentRootSize -= 1;
+    root.style.fontSize = currentRootSize + 'px';
+    defaultRootSize.value = currentRootSize;
+  });
+
+</script>
+
+</html>

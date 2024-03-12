@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>최대최소 크기 설정</title>
+  <style type="text/css">
+    #larger span {
+      font-size: clamp(8pt, 1.5em, 23pt);
+    }
+
+    #smallar span {
+      font-size: clamp(8pt, 0.5em, 23pt);
+    }
+  </style>
+</head>
+
+<body>
+  <span style="font-size: 8pt;">최소 글자</span>
+  <span style="font-size: 23pt;">최대 글자</span><br>
+  <!-- 화면의 크기를 늘리거나 줄여본다. -->
+  
+  점점 크게:
+  <span id="larger"> 1단계
+    <span>2단계
+      <span>3단계
+        <span>4단계
+        </span>
+      </span>
+    </span>
+  </span>
+
+  <br>
+  점점 작게:
+  <span id="smallar" style="font-size: 30pt;">1단계
+    <span>2단계
+      <span>3단계
+        <span>4단계
+        </span>
+      </span>
+    </span>
+  </span>
+
+</body>
+
+</html>

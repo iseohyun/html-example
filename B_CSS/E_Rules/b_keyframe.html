@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Keyframes 예제</title>
+  <style>
+    /* 애니메이션 키프레임 정의 */
+    @keyframes colorChange {
+      0% {
+        background-color: red;
+      }
+
+      50% {
+        background-color: blue;
+      }
+
+      100% {
+        background-color: green;
+      }
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 3초가 반복됨(colorChange는 빨->파->초) */
+      animation: colorChange 3s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>SVG 컨트롤</title>
+</head>
+
+<body>
+  <style>
+    /* SVG에 마우스가 올라갔을 때, 동작한다. */
+    #svg_css_ex1:hover path {
+      /* 0.3초에 걸쳐서 모양을 바꾼다. */
+      transition: 0.3s d ease-out;
+      /* 역V 모양을 그린다. 단, path의 갯수가 같아야 한다.*/
+      d: path("M20,80 L50,20 L80,80");
+    }
+  </style>
+
+  <!-- V모양의 그림 -->
+  <svg id="svg_css_ex1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+    style="width: 100px; border:1px solid #888; border-radius: 10px; box-shadow:#8888 5px 5px 5px;">
+    <path fill="none" stroke="red" d="M20,20 L50,80 L80,20" />
+  </svg>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>내용물 넣기</title>
+</head>
+
+<body>
+  <style>
+  </style>
+  <div id="text1">예문1</div>
+  <div id="text2">예문2</div>
+
+  <button onclick="action();">실행</button>
+
+  <script>
+    function action() {
+      let text1 = document.getElementById("text1");
+      let text2 = document.getElementById("text2");
+
+      text1.innerHTML = "<span style='color:red;'>안녕</span>";
+      text2.innerText = "<span style='color:red;'>안녕</span>";
+    }
+
+  </script>
+</body>
+
+</html>

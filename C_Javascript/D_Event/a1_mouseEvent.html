@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>마우스 이벤트 감지</title>
+</head>
+
+<body>
+  <div id="my-div" style="width:300px;height:300px;border:1px solid black"></div>
+</body>
+
+</html>
+
+<script>
+  // 좌클릭되었을 때, 메뉴가 올라오지 않게 하려면
+  let myDiv = document.getElementById("my-div");
+  myDiv.addEventListener("click", printEvent);
+  myDiv.addEventListener("dbclick", printEvent);
+  myDiv.addEventListener("mouseover", printEvent);
+  myDiv.addEventListener("mouseout", printEvent);
+  myDiv.addEventListener("mousedown", printEvent);
+  myDiv.addEventListener("mouseup", printEvent);
+  myDiv.addEventListener("mousemove", printEvent);
+  myDiv.addEventListener("contextmenu", printEvent);
+  myDiv.removeEventListener
+  myDiv.dispatchEvent
+
+  function printEvent(e) {
+    var event;
+    var button;
+    var location;
+
+    // 눌린 버튼을 알아봅니다.
+    switch (e.button) {
+      case 0: button = "왼쪽"; break;
+      case 1: button = "중간"; break;
+      case 2: button = "오른쪽"; break;
+      default: button = "모름";
+    }
+
+    // 이벤트명을 알아봅니다.
+    switch (e.type) {
+      case "click":
+        event = "클릭";
+        break;
+      case "dbclick":
+        event = "더블클릭";
+        break;
+      case "mouseover":
+        event = "들어옴";
+        break;
+      case "mouseout":
+        event = "나감";
+        break;
+      case "mousedown":
+        event = "누름";
+        break;
+      case "mouseup":
+        event = "뗌";
+        break;
+      case "mousemove":
+        event = "이동";
+        break;
+      case "contextmenu":
+        event = "메뉴";
+        break;
+    }
+
+    console.log(event + ": " + button + "( " + e.clientX + ", " + e.clientY + ")");
+
+    // 우클릭 메뉴출력 기능을 정지
+    e.preventDefault();
+  }
+</script>

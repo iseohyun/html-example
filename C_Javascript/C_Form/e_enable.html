@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>타이틀</title>
+</head>
+
+<body>
+  확인하였습니다.<input type='checkbox' onchange="enableButton(!this.checked)"><br>
+  <button id="button-js-test" disabled>후원</button>
+  <script>
+    function enableButton(sts) {
+      // 상태를 비활성화 시킵니다.
+      document.getElementById('button-js-test').disabled = sts;
+    }
+  </script>
+</body>
+
+</html>

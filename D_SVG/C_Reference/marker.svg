@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 250 170" version="1.1" style="width: 80%;min-height: 170px;border: 1px solid #eee;margin: 10px; padding:20px; border-radius: 15px;"
+  xmlns="http://www.w3.org/2000/svg">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>marker test</title>
+  <defs>
+    <marker id="cir" viewBox="-5 -5 10 10" markerWidth="5" markerHeight="5">
+      <ellipse style="fill:black;stroke:none" cx="0" cy="0" rx="5" ry="5"/>
+    </marker>
+    <marker id="ah2" markerWidth="9" markerHeight="8" viewBox="-9 -4 9 8" orient="auto">
+      <path d="M-9 0 L0 4 0 -4z"/>
+    </marker>
+    <marker id="same" viewBox="-50 -50 100 100" orient="auto" markerWidth="30" markerHeight="30">
+      <path d="M -12 10 L -2 -10" style="stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-width: 2px;"/>
+      <path d="M 2 10 L 12 -10" style="stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-width: 2px;"/>
+    </marker>
+    <marker id="ah1" markerWidth="9" markerHeight="8" viewBox="0 -4 9 8" orient="auto">
+      <path d="M9 0L0 4 0 -4 z"/>
+    </marker>
+  </defs>
+  <path marker-end="url(#ah1)" d="M 19 20 L 119 20" style="fill:none;stroke:#000"/>
+  <path d="M 19 50 L 119 50" style="fill: none; stroke: rgb(0, 0, 0); marker-start: url('#ah2');"/>
+  <path marker-start="url(#ah2)" d="M 19 80 L 67 80 L 119 80" style="fill: none; stroke: rgb(0, 0, 0); marker-end: url('#ah1'); marker-mid: url('#same');"/>
+  <path marker-start="url(#ah2)" d="M 19 110 L 66 110 L 119 110" style="fill: none; stroke: rgb(0, 0, 0); marker-end: url('#cir'); marker-mid: url('#same');"/>
+  <path marker-start="url(#cir)" marker-end="url(#ah1)" d="M 19 140 L 119 140" style="fill:none;stroke:#000"/>
+  <path marker-end="url(#ah1)" d="M 154 20 L 204 20 C 215 20 224 29 224 40" style="fill:none;stroke:#000"/>
+  <path marker-end="url(#ah1)" d="M 154 90 L 184 90 C 195 90 204 81 204 70" style="fill:none;stroke:#000"/>
+  <path marker-end="url(#ah1)" d="M 154 120 C 174 120 197 130 224 150" style="fill:none;stroke:#000"/>
+</svg>

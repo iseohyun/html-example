@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <title>선택자:자식개체 선택</title>
+  <style>
+    table {
+      border-spacing: 0;
+    }
+
+    td,
+    th {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    td:first-child {
+      width: fit-content;
+    }
+
+    td:last-child {
+      width: 300px;
+    }
+
+    /* 첫행과, 마지막 행은 굵은 글씨로 쓴다. 
+      주의: 스타일을 적용할 대상은 tr이 아닌, td이다.
+      */
+    tr:first-child td,
+    tr:last-child td {
+      font-weight: bold;
+    }
+
+    /* 하위에 td가 한 개 밖에 없을 때: 밑줄 */
+    td:only-child {
+      text-decoration: underline;
+    }
+
+    /* 4번째 행의 글씨는 붉은색으로 표시하였다 */
+    tr:nth-child(4) td {
+      color: red;
+    }
+
+    /* 홀수행에 음영(회색, #eee)를 적용하였다. */
+    tr:nth-child(odd) td {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>분류</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>first-child</td>
+        <td>맨 앞 요소</td>
+      </tr>
+      <tr>
+        <td>last-child</td>
+        <td>맨 뒤 요소</td>
+      </tr>
+      <tr>
+        <td colspan="2">only-child 유일한 요소</td>
+      </tr>
+      <tr>
+        <td>nth-child(n)</td>
+        <td>n번째 요소, even, odd가능</td>
+      </tr>
+      <tr>
+        <td>nth-last-child(n)</td>
+        <td>뒤에서부터 n번째 요소</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

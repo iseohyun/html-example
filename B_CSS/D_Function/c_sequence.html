@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <title>자동 카운터</title>
+  <style>
+    /* 중간제목의 순번은 큰 제목이 나오면 1로 초기화된다. */
+    h1 {
+      counter-increment: h1-sequence;
+      counter-reset: h2-sequence;
+      color: #444;
+      margin-top: 25px;
+    }
+
+    /* 작은 제목은 중간제목이 등장하면 1로초기화 된다. */
+    h2 {
+      counter-increment: h2-sequence;
+      counter-reset: h3-sequence;
+      color: #666;
+      margin-left: 5px;
+    }
+
+    h3 {
+      counter-increment: h3-sequence;
+      color: #888;
+      margin-left: 15px;
+    }
+
+    /* 큰 제목 앞에 순번은 로마자로 증가한다. */
+    h1:before {
+      content: counter(h1-sequence, upper-roman) '. ';
+    }
+
+    h2:before {
+      content: counter(h2-sequence, decimal) ') ';
+    }
+
+    /* 작은제목은 중간 제목과 작은 제목의 순번을 혼합하여 작성한다. */
+    h3:before {
+      content: counter(h2-sequence, decimal) '-' counter(h3-sequence, decimal) ' ';
+    }
+  </style>
+</head>
+
+<body>
+  <h1>큰 제목</h1>
+  <h2>중간 제목</h2>
+  <h3>작은 제목</h3>
+  <h3>작은 제목</h3>
+  <h2>중간 제목</h2>
+  <h3>작은 제목</h3>
+  <h3>작은 제목</h3>
+  <h3>작은 제목</h3>
+  <h1>큰 제목</h1>
+  <h2>중간 제목</h2>
+  <h3>작은 제목</h3>
+  <h3>작은 제목</h3>
+  <h2>중간 제목</h2>
+</body>
+
+</html>

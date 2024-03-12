@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>속기</title>
+</head>
+
+<body>
+  <p>가나다라 abcd</p>
+  <p id="test">가나다라 abcd</p>
+  <p id="test2">가나다라 abcd</p>
+
+  <style>
+    #test {
+      /* 스타일 굵기 크기 /행간 서체1, 서체2 */
+      font: italic bold 1.5em /3em 'times new roman', '나눔명조';
+    }
+
+    #test2 {
+      /* 최소한 선언: 크기, 서체 */
+      font: 3em '나눔손글씨_붓';
+    }
+
+    @font-face {
+      font-family: '나눔손글씨_붓';
+      src: url('../../sources/NanumBrush.otf') format('OpenType');
+    }
+  </style>
+</body>
+
+</html>

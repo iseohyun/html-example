@@ -1,0 +1,25 @@
+<svg viewbox="0 0 103 103" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  style="border:1px solid gray;padding:5px;border-radius: 15px;" width="30%">
+  <path class="circle" d="M 52 1 a50,50 0 1 1 -1 0z" fill="none" stroke="red" />
+</svg>
+
+<style>
+  .circle {
+    stroke-dasharray: 314;
+    animation: ani 2s linear infinite;
+  }
+
+  @keyframes ani {
+    0% {
+      stroke-dashoffset: -314;
+    }
+
+    50% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      stroke-dashoffset: 314;
+    }
+  }
+</style>

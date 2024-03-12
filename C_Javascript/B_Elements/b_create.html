@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>생성</title>
+</head>
+
+<body>
+  <script>
+    // 상위 객체를 가져옵니다.
+    var body = document.querySelector('body');
+
+    // 새로운 객체를 생성합니다.
+    var newDiv = document.createElement('div');
+    newDiv.innerHTML = "안녕하신가?";
+    newDiv.id = "sayHi";
+    newDiv.style.color = "red";
+
+    // 상위 객체에 추가합니다.
+    body.appendChild(newDiv);
+  </script>
+</body>
+
+</html>

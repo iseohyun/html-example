@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 등록과 삭제</title>
+</head>
+
+<body>
+  <div id="number1">
+    1
+    <div id="number2">
+      2
+      <div id="number3">
+        3
+        <div id="number4">
+          4
+          <div id="number5">
+            5
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const number1 = document.getElementById("number1");
+  const number2 = document.getElementById("number2");
+  const number3 = document.getElementById("number3");
+  const number4 = document.getElementById("number4");
+  const number5 = document.getElementById("number5");
+
+  number1.addEventListener("click", printInfo);
+  number2.addEventListener("click", printInfo);
+  number3.addEventListener("click", printInfo);
+  number4.addEventListener("click", printInfo);
+  number5.addEventListener("click", printInfo);
+
+  // 클릭을 하면 소유한 모든 객체에게 메시지가 전달된다.
+  function printInfo(e) {
+    // 클릭이 된 구간은 최초 클릭된 객체이다.
+    console.log(e.srcElement.id);
+
+    // 이벤트 전달 중지
+    // e.stopPropagation(); 
+  }
+
+
+  // 예제2: 이벤트 연결 순서
+  // 5-> 4 -> 3 -> 2 -> 1 
+  var stack = "";
+  function stack1(e) {
+    stack += "1";
+  }
+
+  function stack2(e) {
+    stack += "2";
+    // e.stopPropagation();  // 5-> 4 -> 3 -> 2 ->(X) 1 
+  }
+  function stack3(e) {
+    stack += "3";
+  }
+  function stack4(e) {
+    stack += "4";
+  }
+  function stack5(e) {
+    stack += "5";
+  }
+
+  // 
+  number1.addEventListener("click", stack1);
+  number2.addEventListener("click", stack2);
+  number3.addEventListener("click", stack3);
+  number4.addEventListener("click", stack4);
+  number5.addEventListener("click", stack5);
+  document.addEventListener("mouseup", (e) => {
+    console.log(stack);
+    stack = "";
+  });
+</script>
+
+<style>
+  div {
+    padding: 20px 5px 5px 20px;
+    border: 1px solid;
+  }
+</style>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>쿼리로 검색하기</title>
+</head>
+
+<body>
+  <div class="hello">
+    <span>안녕하시오</span>
+  </div>
+  
+  <script>
+    // 쿼리를 검색해 뒤에 Hello를 붙입니다.
+    var helloSpans = document.querySelectorAll(".hello span");
+    helloSpans.forEach(function(span) {
+      span.innerHTML += " Hello";
+    });
+
+    // 검색되지 않는 경우도 고려해야 합니다.
+    var helloDiv = document.querySelectorAll(".hello div");
+    if(!helloDiv || helloDiv.length == 0) {
+      console.log("검색 결과가 없습니다.");
+    }
+  </script>  
+</body>
+
+</html>
