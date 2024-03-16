@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>filter test</title>
+  <defs>
+    <filter id="drop-shadow-filter">
+      <!-- 그림자 위치, 색 -->
+      <feOffset dx="10" dy="10"/>
+      <feComponentTransfer result="offsetblur">
+        <feFuncA id="spread-ctrl" type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,0,0,0.3)"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <!-- 원본과 그림자를 그린다. -->
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="gaussian-blur-filter">
+      <feGaussianBlur stdDeviation="5 5" edgeMode="none"/>
+    </filter>
+  </defs>
+  <rect x="100" y="100" width="200" height="100" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#drop-shadow-filter');" rx="18" ry="18"/>
+  <rect x="100" y="300" width="200" height="100" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#gaussian-blur-filter');" rx="18" ry="18"/>
+</svg>
